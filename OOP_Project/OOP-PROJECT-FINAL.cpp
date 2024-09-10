@@ -494,284 +494,303 @@ string bankdetail::toCSV() {
   ss << bankname << "," << bankbranch << "," << accnumber << "," << totalincome;
   return ss.str();
 }
-
-int main() {
+class vehicleSelection {
   double cost;
   choice c;
-  int x, days;
-  x = c.userChoice();
+  int days;
   Vehicle *v;
 
-  if (x >= 1 && x <= 6) {
-    int modelChoice;
-    switch (x) {
-    case 1: {
-      hatchBack h1(" ", " ", 0);
-      h1.hatchBackshow();
-      cout << "Your Input: ";
-      cin >> modelChoice;
-      if (modelChoice >= 1 && modelChoice <= 9) {
-        cout << "Enter the Number of days: ";
-        cin >> days;
-        switch (modelChoice) {
-        case 1:
-          v = new hatchBack("Suzuki", "Swift", days);
-          break;
-        case 2:
-          v = new hatchBack("Suzuki", "Cultus", days);
-          break;
-        case 3:
-          v = new hatchBack("Suzuki", "Alto", days);
-          break;
-        case 4:
-          v = new hatchBack("Honda", "City", days);
-          break;
-        case 5:
-          v = new hatchBack("Toyota", "Vitz", days);
-          break;
-        case 6:
-          v = new hatchBack("KIA", "Picanto", days);
-          break;
-        case 7:
-          v = new hatchBack("Daihatsu", "Mira", days);
-          break;
-        case 8:
-          v = new hatchBack("Prince", "Pearl", days);
-          break;
-        case 9:
-          v = new hatchBack("United", "Bravo", days);
-          break;
-        }
-      } else {
-        cout << "Invalid Choice" << endl;
-      }
-      break;
-    }
-    case 2: {
-      sedan s1(" ", " ", 0);
-      s1.sedanshow();
-      cout << "Your Input: ";
-      cin >> modelChoice;
-      if (modelChoice >= 1 && modelChoice <= 9) {
-        cout << "Enter the Number of days: ";
-        cin >> days;
-        switch (modelChoice) {
-        case 1:
-          v = new sedan("Toyota", "Yaris", days);
-          break;
-        case 2:
-          v = new sedan("Toyota", "Prius", days);
-          break;
-        case 3:
-          v = new sedan("Honda", "Civic", days);
-          break;
-        case 4:
-          v = new sedan("KIA", "Cerato", days);
-          break;
-        case 5:
-          v = new sedan("Changan", "Alsvin", days);
-          break;
-        case 6:
-          v = new sedan("Proton", "Saga", days);
-          break;
-        case 7:
-          v = new sedan("Hyundai", "Ioniq", days);
-          break;
-        case 8:
-          v = new sedan("Hyundai", "Elantra", days);
-          break;
-        case 9:
-          v = new sedan("Hyundai", "Sonata", days);
-          break;
-        }
-      } else {
-        cout << "Invalid Choice" << endl;
-      }
-      break;
-    }
-    case 3: {
-      SUV u1(" ", " ", 0);
-      u1.suvshow();
-      cout << "Your Input: ";
-      cin >> modelChoice;
-      if (modelChoice >= 1 && modelChoice <= 10) {
-        cout << "Enter the Number of days: ";
-        cin >> days;
-        switch (modelChoice) {
-        case 1:
-          v = new SUV("MG", "HS", days);
-          break;
-        case 2:
-          v = new SUV("Cherry", "Tiggo Pro 6", days);
-          break;
-        case 3:
-          v = new SUV("KIA", "Sorento", days);
-          break;
-        case 4:
-          v = new SUV("KIA", "Santa FE", days);
-          break;
-        case 5:
-          v = new SUV("Changan", "Oshan X7", days);
-          break;
-        case 6:
-          v = new SUV("Honda", "HR-V", days);
-          break;
-        case 7:
-          v = new SUV("KIA", "Sportage", days);
-          break;
-        case 8:
-          v = new SUV("Hyundai", "Tucson", days);
-          break;
-        case 9:
-          v = new SUV("Toyota", "Land Cruiser", days);
-          break;
-        case 10:
-          v = new SUV("Toyota", "Fortuner", days);
-          break;
-        }
-      } else {
-        cout << "Invalid Choice" << endl;
-      }
-      break;
-    }
-    case 4: {
-      Truck t1(" ", " ", 0);
-      t1.truckshow();
-      cout << "Your Input: ";
-      cin >> modelChoice;
-      if (modelChoice >= 1 && modelChoice <= 10) {
-        cout << "Enter the Number of days: ";
-        cin >> days;
-        switch (modelChoice) {
-        case 1:
-          v = new Truck("Toyota", "Hilux", days);
-          break;
-        case 2:
-          v = new Truck("ISUZU", "DMAX", days);
-          break;
-        case 3:
-          v = new Truck("RAM", "1500 limited", days);
-          break;
-        case 4:
-          v = new Truck("Chevrolet", "Silverado", days);
-          break;
-        case 5:
-          v = new Truck("Nissan", "Titan Platinum Reserve", days);
-          break;
-        case 6:
-          v = new Truck("Ford", "F-150 limited", days);
-          break;
-        case 7:
-          v = new Truck("Cadillac", "Escalade", days);
-          break;
-        case 8:
-          v = new Truck("Toyota", "Tundra", days);
-          break;
-        case 9:
-          v = new Truck("Range Rover", "RR SV", days);
-          break;
-        case 10:
-          v = new Truck("GMC", "Sierra Denali", days);
-          break;
-        }
-      } else {
-        cout << "Invalid Choice" << endl;
-      }
-      break;
-    }
-    case 5: {
-      motorcycle m1(" ", " ", 0);
-      m1.motorcycleshow();
-      cout << "Your Input: ";
-      cin >> modelChoice;
-      if (modelChoice >= 1 && modelChoice <= 4) {
-        cout << "Enter the Number of days: ";
-        cin >> days;
-        switch (modelChoice) {
-        case 1:
-          v = new motorcycle("Suzuki", "100cc", days);
-          break;
-        case 2:
-          v = new motorcycle("Suzuki", "150cc", days);
-          break;
-        case 3:
-          v = new motorcycle("Yamaha", "YBR-350cc", days);
-          break;
-        case 4:
-          v = new motorcycle("Honda", "CG-125", days);
-          break;
-        }
-      } else {
-        cout << "Invalid Choice" << endl;
-      }
-      break;
-    }
-    case 6: {
-      Luxury L1(" ", " ", 0);
-      L1.Luxuryshow();
-      cout << "Your Input: ";
-      cin >> modelChoice;
-      if (modelChoice >= 1 && modelChoice <= 9) {
-        cout << "Enter the Number of days: ";
-        cin >> days;
-        switch (modelChoice) {
-        case 1:
-          v = new Luxury("Rolls Royce", "Phantom", days);
-          break;
-        case 2:
-          v = new Luxury("Bentley", "Continental GT", days);
-          break;
-        case 3:
-          v = new Luxury("Audi", "A8", days);
-          break;
-        case 4:
-          v = new Luxury("BMW", "7 series", days);
-          break;
-        case 5:
-          v = new Luxury("Mercedes", "Benz s-class", days);
-          break;
-        case 6:
-          v = new Luxury("Lexus", "LS-sedan", days);
-          break;
-        case 7:
-          v = new Luxury("Range Rover", "RR Autobiography", days);
-          break;
-        case 8:
-          v = new Luxury("Jaguar", "XJ", days);
-          break;
-        case 9:
-          v = new Luxury("Rolls Royce", "Cullinan", days);
-          break;
-        }
-      } else {
-        cout << "Invalid Choice" << endl;
-      }
-      break;
-    }
-    }
+public:
+  vehicleSelection() : cost(0.0), days(0), v(nullptr) {}
 
-    cost = v->Rentalcost();
-    cout << "Total Vehicle Rent= " << v->Rentalcost() << endl;
-  } else {
-    cout << "Invalid Choice" << endl;
+  void selectVehicle() {
+    int x = c.userChoice();
+    if (x >= 1 && x <= 6) {
+      int modelChoice;
+      switch (x) {
+      case 1: {
+        hatchBack h1(" ", " ", 0);
+        h1.hatchBackshow();
+        cout << "Your Input: ";
+        cin >> modelChoice;
+        if (modelChoice >= 1 && modelChoice <= 9) {
+          cout << "Enter the Number of days: ";
+          cin >> days;
+          switch (modelChoice) {
+          case 1:
+            v = new hatchBack("Suzuki", "Swift", days);
+            break;
+          case 2:
+            v = new hatchBack("Suzuki", "Cultus", days);
+            break;
+          case 3:
+            v = new hatchBack("Suzuki", "Alto", days);
+            break;
+          case 4:
+            v = new hatchBack("Honda", "City", days);
+            break;
+          case 5:
+            v = new hatchBack("Toyota", "Vitz", days);
+            break;
+          case 6:
+            v = new hatchBack("KIA", "Picanto", days);
+            break;
+          case 7:
+            v = new hatchBack("Daihatsu", "Mira", days);
+            break;
+          case 8:
+            v = new hatchBack("Prince", "Pearl", days);
+            break;
+          case 9:
+            v = new hatchBack("United", "Bravo", days);
+            break;
+          }
+        } else {
+          cout << "Invalid Choice" << endl;
+        }
+        break;
+      }
+      case 2: {
+        sedan s1(" ", " ", 0);
+        s1.sedanshow();
+        cout << "Your Input: ";
+        cin >> modelChoice;
+        if (modelChoice >= 1 && modelChoice <= 9) {
+          cout << "Enter the Number of days: ";
+          cin >> days;
+          switch (modelChoice) {
+          case 1:
+            v = new sedan("Toyota", "Yaris", days);
+            break;
+          case 2:
+            v = new sedan("Toyota", "Prius", days);
+            break;
+          case 3:
+            v = new sedan("Honda", "Civic", days);
+            break;
+          case 4:
+            v = new sedan("KIA", "Cerato", days);
+            break;
+          case 5:
+            v = new sedan("Changan", "Alsvin", days);
+            break;
+          case 6:
+            v = new sedan("Proton", "Saga", days);
+            break;
+          case 7:
+            v = new sedan("Hyundai", "Ioniq", days);
+            break;
+          case 8:
+            v = new sedan("Hyundai", "Elantra", days);
+            break;
+          case 9:
+            v = new sedan("Hyundai", "Sonata", days);
+            break;
+          }
+        } else {
+          cout << "Invalid Choice" << endl;
+        }
+        break;
+      }
+      case 3: {
+        SUV u1(" ", " ", 0);
+        u1.suvshow();
+        cout << "Your Input: ";
+        cin >> modelChoice;
+        if (modelChoice >= 1 && modelChoice <= 10) {
+          cout << "Enter the Number of days: ";
+          cin >> days;
+          switch (modelChoice) {
+          case 1:
+            v = new SUV("MG", "HS", days);
+            break;
+          case 2:
+            v = new SUV("Cherry", "Tiggo Pro 6", days);
+            break;
+          case 3:
+            v = new SUV("KIA", "Sorento", days);
+            break;
+          case 4:
+            v = new SUV("KIA", "Santa FE", days);
+            break;
+          case 5:
+            v = new SUV("Changan", "Oshan X7", days);
+            break;
+          case 6:
+            v = new SUV("Honda", "HR-V", days);
+            break;
+          case 7:
+            v = new SUV("KIA", "Sportage", days);
+            break;
+          case 8:
+            v = new SUV("Hyundai", "Tucson", days);
+            break;
+          case 9:
+            v = new SUV("Toyota", "Land Cruiser", days);
+            break;
+          case 10:
+            v = new SUV("Toyota", "Fortuner", days);
+            break;
+          }
+        } else {
+          cout << "Invalid Choice" << endl;
+        }
+        break;
+      }
+      case 4: {
+        Truck t1(" ", " ", 0);
+        t1.truckshow();
+        cout << "Your Input: ";
+        cin >> modelChoice;
+        if (modelChoice >= 1 && modelChoice <= 10) {
+          cout << "Enter the Number of days: ";
+          cin >> days;
+          switch (modelChoice) {
+          case 1:
+            v = new Truck("Toyota", "Hilux", days);
+            break;
+          case 2:
+            v = new Truck("ISUZU", "DMAX", days);
+            break;
+          case 3:
+            v = new Truck("RAM", "1500 limited", days);
+            break;
+          case 4:
+            v = new Truck("Chevrolet", "Silverado", days);
+            break;
+          case 5:
+            v = new Truck("Nissan", "Titan Platinum Reserve", days);
+            break;
+          case 6:
+            v = new Truck("Ford", "F-150 limited", days);
+            break;
+          case 7:
+            v = new Truck("Cadillac", "Escalade", days);
+            break;
+          case 8:
+            v = new Truck("Toyota", "Tundra", days);
+            break;
+          case 9:
+            v = new Truck("Range Rover", "RR SV", days);
+            break;
+          case 10:
+            v = new Truck("GMC", "Sierra Denali", days);
+            break;
+          }
+        } else {
+          cout << "Invalid Choice" << endl;
+        }
+        break;
+      }
+      case 5: {
+        motorcycle m1(" ", " ", 0);
+        m1.motorcycleshow();
+        cout << "Your Input: ";
+        cin >> modelChoice;
+        if (modelChoice >= 1 && modelChoice <= 4) {
+          cout << "Enter the Number of days: ";
+          cin >> days;
+          switch (modelChoice) {
+          case 1:
+            v = new motorcycle("Suzuki", "100cc", days);
+            break;
+          case 2:
+            v = new motorcycle("Suzuki", "150cc", days);
+            break;
+          case 3:
+            v = new motorcycle("Yamaha", "YBR-350cc", days);
+            break;
+          case 4:
+            v = new motorcycle("Honda", "CG-125", days);
+            break;
+          }
+        } else {
+          cout << "Invalid Choice" << endl;
+        }
+        break;
+      }
+      case 6: {
+        Luxury L1(" ", " ", 0);
+        L1.Luxuryshow();
+        cout << "Your Input: ";
+        cin >> modelChoice;
+        if (modelChoice >= 1 && modelChoice <= 9) {
+          cout << "Enter the Number of days: ";
+          cin >> days;
+          switch (modelChoice) {
+          case 1:
+            v = new Luxury("Rolls Royce", "Phantom", days);
+            break;
+          case 2:
+            v = new Luxury("Bentley", "Continental GT", days);
+            break;
+          case 3:
+            v = new Luxury("Audi", "A8", days);
+            break;
+          case 4:
+            v = new Luxury("BMW", "7 series", days);
+            break;
+          case 5:
+            v = new Luxury("Mercedes", "Benz s-class", days);
+            break;
+          case 6:
+            v = new Luxury("Lexus", "LS-sedan", days);
+            break;
+          case 7:
+            v = new Luxury("Range Rover", "RR Autobiography", days);
+            break;
+          case 8:
+            v = new Luxury("Jaguar", "XJ", days);
+            break;
+          case 9:
+            v = new Luxury("Rolls Royce", "Cullinan", days);
+            break;
+          }
+        } else {
+          cout << "Invalid Choice" << endl;
+        }
+        break;
+      }
+      default:
+        cout << "Invalid Choice" << endl;
+        return;
+      }
+      cost = v->Rentalcost();
+      cout << "Total Vehicle Rent= " << cost << endl;
+    } else {
+      cout << "Invalid Choice" << endl;
+    }
   }
+
+  int getDays() { return days; }
+  Vehicle *getVehicle() { return v; }
+  double getCost() { return cost; }
+  void setCost(double newCost) { cost = newCost; }
+
+  ~vehicleSelection() { delete v; }
+};
+
+int main() {
+  vehicleSelection vs;
+  vs.selectVehicle();
 
   Package packages[] = {Package("Basic", 5.0), Package("Standard", 10.0),
                         Package("Premium", 15.0)};
 
   int packageIndex = -1;
-  if (days == 3) {
+  if (vs.getDays() == 3) {
     packageIndex = 0;
-  } else if (days > 3 && days <= 7) {
+  } else if (vs.getDays() > 3 && vs.getDays() <= 7) {
     packageIndex = 1;
-  } else if (days > 7) {
+  } else if (vs.getDays() > 7) {
     packageIndex = 2;
   }
 
   if (packageIndex != -1) {
     Package selectedPackage = packages[packageIndex];
     selectedPackage.display();
-    cost = selectedPackage.applyDiscount(cost);
+    double discountedCost = selectedPackage.applyDiscount(vs.getCost());
+    vs.setCost(discountedCost);
   } else {
     cout << "No package applied" << endl;
   }
@@ -785,38 +804,29 @@ int main() {
   bankDetails.show();
 
   ofstream csvFile("data.csv");
+  if (!csvFile.is_open()) {
+    cout << "Error opening file for writing!" << endl;
+    return 1;
+  }
   csvFile << "Customer Name,Father Name,Address,City,Age,Bank Name,Bank "
              "Branch,Bank Account Number,Total Income,Vehicle "
              "Type,Make,Model,Days,Rental Cost\n";
-  csvFile << customer.toCSV() << "," << bankDetails.toCSV() << "," << x << ","
-          << v->getMake() << "," << v->getModel() << "," << days << "," << cost
-          << "\n";
+  csvFile << customer.toCSV() << "," << bankDetails.toCSV() << ","
+          << vs.getVehicle()->getMake() << "," << vs.getVehicle()->getModel()
+          << "," << vs.getDays() << "," << vs.getCost() << "\n";
   csvFile.close();
-  if (!csvFile.is_open())
-    cout << "Error opening file!" << endl;
-  csvFile << "Customer Name,Father Name,Address,City,Age,Bank Name,Bank "
-             "Branch,Bank Account Number,Total Income,Vehicle "
-             "Type,Make,Model,Days,Rental Cost\n";
-  csvFile << customer.toCSV() << "," << bankDetails.toCSV() << "," << x << ","
-          << v->getMake() << "," << v->getModel() << "," << days << "," << cost
-          << "\n"
-          << endl
-          << endl;
-  csvFile.close();
-  string d;
+
   cout << endl << endl << "Final Summary : " << endl << endl;
 
   ifstream file("data.csv");
-  string line;
-
   if (!file.is_open()) {
-    cout << "Error opening file!" << endl;
+    cout << "Error opening file for reading!" << endl;
+    return 1;
   }
-
+  string line;
   while (getline(file, line)) {
     stringstream ss(line);
     string token;
-
     while (getline(ss, token, ',')) {
       cout << token << " | ";
     }
